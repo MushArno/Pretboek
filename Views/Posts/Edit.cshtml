@@ -1,0 +1,54 @@
+﻿@model Pretboek.Models.Post
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="post_id" />
+            <div class="form-group">
+                <label asp-for="post_title" class="control-label"></label>
+                <input asp-for="post_title" class="form-control" />
+                <span asp-validation-for="post_title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="post_img" class="control-label"></label>
+                <input asp-for="post_img" class="form-control" />
+                <span asp-validation-for="post_img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="post_author" class="control-label"></label>
+                <input asp-for="post_author" class="form-control" />
+                <span asp-validation-for="post_author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="post_created" class="control-label"></label>
+                <input asp-for="post_created" class="form-control" />
+                <span asp-validation-for="post_created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="post_likes" class="control-label"></label>
+                <input asp-for="post_likes" class="form-control" />
+                <span asp-validation-for="post_likes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
